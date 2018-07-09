@@ -8,4 +8,9 @@
 5. sys
 
 
-[Very Easy to play](http://showterm.io/165f7567e58be0b3fccd4)]
+
+Snake Game  | Built with Python
+------------- | -------------
+[![asciicast](https://asciinema.org/a/190808.png)](https://asciinema.org/a/190808)  | [![asciicast](https://asciinema.org/a/190811.png)](https://asciinema.org/a/190811)
+
+

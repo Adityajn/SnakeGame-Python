@@ -20,13 +20,12 @@ class GameBoard(object):
 		self.snake = [ ((head[0]+i),head[1]) for i in range(size) ]
 		
 		# put food
-		self.food = [(10,20)]
+		self.food = []
 		food = Thread(target=self.putFood)
 		food.start()
 
 		# 1- up, 2-right, 3-down, 4- left
 		self.move = 4
-		self.oldmove = 1
 
 	def __str__(self):
 		score = "Score : {}".format(str(len(self.snake)-2).zfill(2))
@@ -39,7 +38,6 @@ class GameBoard(object):
 		board+='#'*(self.col+2)+"\n"
 		return board
 		
-
 	def refreshBoard(self):
 		"""
 			contruct a new board from scratch
@@ -134,7 +132,7 @@ def initialize(window):
 		else:
 			board = GameBoard(int(sys.argv[1]),int(sys.argv[2]))
 	else:
-		board = GameBoard(20,50)
+		board = GameBoard(35,70)
 	game = True
 	while game:
 		window.clear()
@@ -160,15 +158,13 @@ def initialize(window):
 			Github: https://github.com/Adityajn
 		""")
 
-
-	
 def gameOver(window,board):
 	window.clear()
 	window.insstr(0,0,str(board.gameOver()))
 	window.refresh()
 	ch= window.getch()
 	if str(ch)==ord("n"):
-		board = GameBoard(20,50)
+		board = GameBoard(35,70)
 		return (True,board)
 	else:
 		return (False,None)
@@ -197,7 +193,7 @@ To Start Game :
 	row :  no of rows in game (Minimum 20)
 	col : no of columns in game (Minimum 50)
 	
-	if not given default values [20] [50] will be taken
+	if not given default values [35] [70] will be taken
 			""")
 	else:
 		curses.wrapper(initialize)
