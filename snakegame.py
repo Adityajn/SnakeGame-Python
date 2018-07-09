@@ -1,3 +1,7 @@
+"""
+Author : Aditya Jain
+Contact: adityajn105@gmail.com
+"""
 import curses
 import time
 import random
